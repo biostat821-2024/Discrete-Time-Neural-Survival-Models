@@ -55,9 +55,7 @@ The `model` has two layer, one with 32 neurons and the other has 64 neurons and 
 ### Calculating Negative Log Likelihood Loss Using `DiscreteFailureTimeNLL`
 The Python class `DiscreteFailureTimeNLL` is a module designed to calculate the Negative Log-Likelihood Loss (NLL) for models that predict outcomes over discrete time bins.
 
-$
-\text{NLL} = -\sum_{i=1}^n \left[ \delta_i \log(p(T_i)) + (1 - \delta_i) \log(1 - p(T_i)) \right]
-$
+$\text{NLL} = -\sum_{i=1}^n \left[ \delta_i \log(p(T_i)) + (1 - \delta_i) \log(1 - p(T_i)) \right]$
 
 This class has a hepler function `_get_proportion_of_bins_completed`, which takes survival time as input and outoput a tensor inidcates the proportion of each bin that is completed by each time. This helps to interpolate the event time to smooth transition between bins and allows the model to capture the continuity of the time. In this case, loss will be different for two  censored patients with different observed time, eventhough they have same prediction.
 Assume we have following predictions:
