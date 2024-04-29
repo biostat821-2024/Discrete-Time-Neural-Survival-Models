@@ -1,7 +1,13 @@
 """Test DNTS."""
 
 import math
+import sys
 import unittest
+
+sys.path.append(
+    "/Users/kaitlynzhang/Desktop/finalversion821/Discrete-Time-Neural-Survival-Models/src"
+)
+
 
 import numpy as np
 import torch
